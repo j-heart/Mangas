@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Controller2;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\HomeController;
 
@@ -16,11 +17,14 @@ use App\Http\Controller\HomeController;
 */
 
 
-Route::get('/',[PostController::class,'index']);
+Route::get('/',[Controller2::class,'index']);
+Route::get('/manage',[PostController::class,'indexadmin']);
+
 
 Route::post('/post',[PostController::class,'store']);
 Route::delete('/delete/{id}',[PostController::class,'destroy']);
 Route::get('/edit/{id}',[PostController::class,'edit']);
+Route::get('/read/{id}',[Controller2::class,'read']);
 
 Route::delete('/deleteimage/{id}',[PostController::class,'deleteimage']);
 Route::delete('/deletecover/{id}',[PostController::class,'deletecover']);
@@ -36,3 +40,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/create', ['middleware' => 'auth', function() {
     return view('create');
 }]);
+
+Route::get('/create', ['middleware' => 'auth', function() {
+    return view('create');
+}]);
+

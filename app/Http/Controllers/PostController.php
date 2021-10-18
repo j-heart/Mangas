@@ -13,6 +13,7 @@ class PostController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +23,12 @@ class PostController extends Controller
     {
         $posts=Post::all();
         return view('index')->with('posts',$posts);
+    }
+
+    public function indexadmin()
+    {
+        $posts=Post::all();
+        return view('manage')->with('posts',$posts);
     }
 
     /**
@@ -90,11 +97,20 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
+
+
     public function edit($id)
     {
        $posts=Post::findOrFail($id);
         return view('edit')->with('posts',$posts);
     }
+    
+    public function read($id)
+    {
+       $posts=Post::findOrFail($id);
+        return view('read')->with('posts',$posts);
+    }
+
 
     /**
      * Update the specified resource in storage.

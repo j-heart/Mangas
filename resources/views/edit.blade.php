@@ -15,7 +15,7 @@
     </head>
     <body>
                 
-            <div class="container" style="margin-left: 32%  ;">
+            <div class="container" style="margin-left: 32%  ;" >
             <div class="container" style="margin-top: 50px  ;">
             <div class="row">
 
@@ -60,7 +60,7 @@
                          <button class="btn text-danger">DELETE</button>
                          @csrf
                          @method('delete')
-                         </form>
+                    </form>
                      <img src="/images/{{ $img->image }}" class="img-responsive" style="max-height: 100px; max-width: 100px;" alt="" srcset="">
                      @endforeach
                      @endif

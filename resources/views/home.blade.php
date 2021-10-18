@@ -1,24 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('Welcome Back Administrator') }}
-
-                </div>
-            </div>
+<header class="bg-secondary py-1">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Administrator</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Welcome Back Administrator</p>
         </div>
     </div>
-</div>
+</header>
 @endsection
