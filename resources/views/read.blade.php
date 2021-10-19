@@ -15,7 +15,9 @@
                 @endif
             </article>
         </div>
+
         <div class="col-lg-4">
+            
             <div class="card mb-4">
                 <div class="card-header">Description</div>
                 <div class="card-body">{{ $posts->body }}</div>

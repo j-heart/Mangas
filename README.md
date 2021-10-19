@@ -9,3 +9,4 @@
 - npm install
 - config your own database for manga
 
+# mangareader
