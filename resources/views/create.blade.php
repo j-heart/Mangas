@@ -24,10 +24,14 @@
 				    <div class="form-group">
                         <form action="/post" method="post" enctype="multipart/form-data">
                          @csrf
-        				 <input type="text" name="title" class="form-control mt-5" placeholder="title">
-        				 <input type="text" name="author" class="form-control mt-5" placeholder="author">
-                         <input type="text" name="episode" class="form-control mt-5" placeholder="episode">
-                         <Textarea name="body" cols="20" rows="4" class="form-control mt-5" placeholder="description"></Textarea>
+                         <label for="">Title</label>
+        				 <input type="text" name="title" class="form-control mb-3" placeholder="title">
+                         <label for="">Author</label>
+        				 <input type="text" name="author" class="form-control mb-3" placeholder="author">
+                         <label for="">Episode</label>
+                         <input type="text" name="episode" class="form-control mb-3" placeholder="episode">
+                         <label for="">Description</label>
+                         <Textarea name="body" cols="20" rows="4" class="form-control mb-3" placeholder="description"></Textarea>
                          <label class="mt-5">Cover Image</label>
                          <input type="file" id="input-file-now-custom-3" class="form-control mt-1" name="cover">
 

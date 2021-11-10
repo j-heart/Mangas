@@ -12,6 +12,13 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+     <style>
+         #delete {
+             border-style: solid;
+             border-width: 2px;
+         }
+     </style>
+
     </head>
     <body>
                 
@@ -41,9 +48,9 @@
 
                 <div class="container" style="margin-top: 50px  ;">
 
-                <div class="col-lg-3">
+                <div class="col-lg-3"  >
                     <p>Cover:</p>
-                    <form action="/deletecover/{{ $posts->id }}" method="post">
+                    <form action="/deletecover/{{ $posts->id }}" method="post" >
                     <button class="btn text-danger">DELETE</button>
                     @csrf
                     @method('delete')
@@ -56,12 +63,15 @@
                      @if (count($posts->images)>0)
                      <p>Images:</p>
                      @foreach ($posts->images as $img)
-                     <form action="/deleteimage/{{ $img->id }}" method="post">
-                         <button class="btn text-danger">DELETE</button>
-                         @csrf
-                         @method('delete')
-                    </form>
-                     <img src="/images/{{ $img->image }}" class="img-responsive" style="max-height: 100px; max-width: 100px;" alt="" srcset="">
+                     <div id="delete" class="mb-2">
+                        <form action="/deleteimage/{{ $img->id }}" method="post" >
+                            <button class="btn text-danger">DELETE</button>
+                            @csrf
+                            @method('delete')
+                       </form>
+                        <img src="/images/{{ $img->image }}" class="img-responsive" style="max-height: 100px; max-width: 100px;" alt="" srcset="" >
+
+                     </div>
                      @endforeach
                      @endif
 
